@@ -1,3 +1,6 @@
+<div class="container">
+<a class="btn btn-outline-primary btn-sm" routerLink="/movimentacoes-new">Nova Movimentação</a>
+
 <table class="table table-striped">
     <thead>
         <tr>
@@ -11,10 +14,11 @@
     <tbody>
         <tr *ngFor="let item of movimentacoes; index as i">
         <th scope="row">{{ i + 1 }}</th>
-        <td>{{ item.dataHora }}</td>
+        <td>{{ item.dataHora | date: 'dd/MM/yyyy HH:mm:ss' }}</td>
         <td>{{ item.descricao }}</td>
-        <td>{{ item.valor }}</td>
+        <td [ngStyle]="{'color':item.tipo === 'RECEITA' ? 'blue' : 'red'}">{{ item.valor | currency:'BRL' }}</td>
         <td>{{ item.tipo }}</td>
         </tr>
     </tbody>
 </table>
+</div>

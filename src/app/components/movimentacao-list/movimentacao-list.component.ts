@@ -12,6 +12,7 @@ export class MovimentacaoListComponent implements OnInit {
   constructor(private movimentacaoService: MovimentacaoService) { }
 
   ngOnInit(): void {
+    this.listMovimentacoes();
   }
   listMovimentacoes(): void {
     this.movimentacaoService.list()
