@@ -10,8 +10,7 @@
             <div class="col-md-9">
               <label for="iCorrentista" class="form-label">Correntista</label>
               <select id="iCorrentista" class="form-select">
-                <option selected>Choose...</option>
-                <option>...</option>
+                <option *ngFor="let c of correntistas" [ngValue]="c">{{c.cpf}}-{{c.nome}}</option>
               </select>
             </div>
             <div class="col-12">
@@ -21,8 +20,8 @@
             <div class="col-md-3">
               <label for="iTipo" class="form-label">Tipo Movimentação</label>
               <select id="iTipo" class="form-select">
-                <option selected>Tipos</option>
-                <option>...</option>
+                <option selected>RECEITA</option>
+                <option>DESPESA</option>
               </select>
             </div>
             <div class="col-md-2">
