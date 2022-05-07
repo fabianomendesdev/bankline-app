@@ -17,7 +17,18 @@ export class MovimentacaoListComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    
+    this.exibirCorrentistas();
+  }
+  exibirCorrentistas(): void {
+    this.correntistaService.list()
+      .subscribe(
+        data => {
+          this.correntistas = data;
+          console.log(data);
+        },
+        error => {
+          console.log(error);
+        });
   }
   listMovimentacoes(): void {
     this.movimentacaoService.findByIdConta(this.correntista.id)

@@ -24,6 +24,7 @@ export class MovimentacaoNewComponent implements OnInit {
   ngOnInit(): void {
     this.exibirCorrentistas();
   }
+  
   exibirCorrentistas(): void {
     this.correntistaService.list()
       .subscribe(
